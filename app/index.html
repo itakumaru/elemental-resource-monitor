@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+        <link rel="stylesheet" href="css/lib/index.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/lib/vue.min.js"></script>
+        <script src="js/lib/index.js"></script>
+    </head>
+    <body>
+        <div id="drag"></div>
+        <div id="app">
+            <el-row>
+                <el-col :span="12">{{ time }}</el-col>
+                <el-col style="text-align: right;" :span="12">
+                    <el-link class="button" @click="toggleAlwaysOnTop" title="Lock on Top" :icon="lockIcon" :underline="false"></el-link>
+                    <el-link class="button" @click="mainWindow.minimize();" title="Minimize" icon="el-icon-remove-outline" :underline="false"></el-link>
+                    <el-link class="button" @click="mainWindow.close();" title="Close" icon="el-icon-circle-close" :underline="false"></el-link>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="12">
+                    <table>
+                        <tr>
+                            <td><el-progress type="circle" width="93" :percentage="cpuPercentage" :color="colors" stroke-width="1.5" stroke-linecap="butt"></el-progress></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">CPU</td>
+                        </tr>
+                    </table>
+                </el-col>
+                <el-col :span="12">
+                    <table align="right">
+                        <tr>
+                            <td><el-progress type="circle" width="93" :percentage="ramPercentage" :color="colors" stroke-width="1.5" stroke-linecap="butt"></el-progress></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">RAM</td>
+                        </tr>
+                    </table>
+                </el-col>
+            </el-row>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

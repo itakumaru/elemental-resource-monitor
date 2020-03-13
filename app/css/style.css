@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Aileron Light;
+    src: url(fonts/Aileron-Light.otf) format("opentype");
+}
+
+body {
+    margin: 20px;
+    color: #303133;
+    font-size: 14px;
+    font-family: Aileron Light;
+    user-select: none;
+    overflow: hidden;
+}
+
+#drag {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-app-region: drag;
+}
+
+.button {
+    -webkit-app-region: no-drag;
+}
+
+.el-row {
+    margin-bottom: 20px;
+}
